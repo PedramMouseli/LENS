@@ -1,0 +1,13 @@
+# data 
+/data/baseline_results.csv 
+/data/processed/ 
+/data/ratings/ 
+/data/raw/ 
+
+# runs 
+runs/ 
+
+# python 
+src/__pycache__/ 
+src/.DS_Store 
+.DS_Store
