@@ -21,9 +21,11 @@ This repository contains the complete training, adaptation, and evaluation pipel
 
 ## Data Availability
 
-The preprocessed data, participant demographics/cohort splits, and precomputed baseline feature sets are available via the Borealis data repository:
+The preprocessed data, participant demographics/cohort splits are available via the Borealis data repository:
 
 > **Data Repository**: [Borealis (DOI: 10.5683/SP4/JCWT3H)](https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP4/JCWT3H)
+
+Precomputed baseline feature sets are available in the `data/baseline_features` folder.
 
 ### Directory Placement
 
@@ -136,38 +138,6 @@ python scripts/run_baselines.py
 ```
 
 This uses the precomputed feature sets in `data/baseline_features/` and outputs the evaluation summary to `data/baseline_results.csv`.
-
----
-
-## Project Structure
-
-```text
-.
-├── data/
-│   ├── baseline_features/   # Precomputed feature sets for baseline models
-│   ├── figures/             # Overview and architecture figures
-│   ├── processed/           # Preprocessed physiological data tensors
-│   └── ratings/             # Demographic and cohort split files
-├── scripts/
-│   ├── env_setup.sh         # Shell script for environment setup
-│   ├── run_baselines.py     # Evaluation runner for baseline models
-│   ├── run_training.sh      # End-to-end training pipeline launcher
-│   └── time_tta_cpu.py      # Script for TTA latency benchmarking
-├── src/
-│   ├── modules/             # Neural network building blocks (encoders, Conformer, etc.)
-│   ├── augmentations.py     # Signal-level data augmentation techniques
-│   ├── baseline_features.py # Feature extraction routines for baseline models
-│   ├── baseline_models.py   # Baseline model architectures & evaluation metrics
-│   ├── config.py            # Global hyperparameters and configuration classes
-│   ├── data_loader.py       # PyTorch Dataset and DataLoader utilities
-│   ├── model.py             # LENS neural network architecture
-│   ├── prepare_data.py      # Data preparation and tensor structuring
-│   ├── preprocessing.py     # Raw signal preprocessing routines
-│   ├── ssp_utils.py         # Self-supervised pretraining helper routines
-│   ├── train.py             # Main training, fine-tuning, and evaluation entry point
-│   └── utils.py             # Logging, metric computation, and general utilities
-└── requirements.txt         # Python package dependencies
-```
 
 ---
 
